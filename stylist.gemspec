@@ -16,11 +16,55 @@ Gem::Specification.new do |s|
     "LICENSE",
      "README.md"
   ]
+  s.files = [
+    ".document",
+     ".gitignore",
+     "LICENSE",
+     "README.md",
+     "Rakefile",
+     "init.rb",
+     "lib/stylist.rb",
+     "lib/stylist/configuration.rb",
+     "lib/stylist/controller_mixin.rb",
+     "lib/stylist/processor.rb",
+     "lib/stylist/processors/less_processor.rb",
+     "lib/stylist/processors/sass_processor.rb",
+     "lib/stylist/processors/yui_compressor_processor.rb",
+     "lib/stylist/railtie.rb",
+     "lib/stylist/stylesheet_collection.rb",
+     "lib/stylist/version.rb",
+     "lib/stylist/view_helpers.rb",
+     "rails/init.rb",
+     "spec/configuration_spec.rb",
+     "spec/controllers/controller_mixin_spec.rb",
+     "spec/controllers/view_helpers_spec.rb",
+     "spec/fixtures/public/stylesheets/base.css",
+     "spec/fixtures/public/stylesheets/home.css",
+     "spec/fixtures/public/stylesheets/layout.css",
+     "spec/fixtures/public/stylesheets/typography.css",
+     "spec/spec.opts",
+     "spec/spec_helper.rb",
+     "spec/stylesheet_collection_spec.rb",
+     "spec/support/application_controller.rb",
+     "spec/support/boot_rails2.rb",
+     "spec/support/boot_rails3.rb",
+     "stylist.gemspec"
+  ]
   s.homepage = %q{http://github.com/tisho/stylist}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.6}
   s.summary = %q{Powerful stylesheet management for your Rails app.}
+  s.test_files = [
+    "spec/configuration_spec.rb",
+     "spec/controllers/controller_mixin_spec.rb",
+     "spec/controllers/view_helpers_spec.rb",
+     "spec/spec_helper.rb",
+     "spec/stylesheet_collection_spec.rb",
+     "spec/support/application_controller.rb",
+     "spec/support/boot_rails2.rb",
+     "spec/support/boot_rails3.rb"
+  ]
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
