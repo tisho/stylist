@@ -15,6 +15,21 @@ Stylist
 
 _Stylist_ provides powerful stylesheet management for your Rails app. You can organize your .css files by media, add, remove or prepend stylesheets in the stylesheets stack from your controllers and views, and process them using [Less](http://lesscss.org) or [Sass](http://sass-lang.com/). And as if that wasn't awesome enough, you can even minify them using [YUI Compressor](http://developer.yahoo.com/yui/compressor) and bundle them into completely incomprehensible, but bandwidth-friendly mega-stylesheets.
 
+What Stylist Does
+=======
+
+It lets you do cool stuff with your css files. Say you want to process stylesheets with [Less](http://lesscss.org), and then minify them with [YUI Compressor](http://developer.yahoo.com/yui/compressor). You'll put this in `config/initializers/stylist.rb`:
+
+	Stylist.configure do |config|
+		config.process_with :less, :yui_compressor
+	end
+
+Then, you can do all kind of css file gymnastics, using the almighty `css` helper.
+
+	<% css.append(:base).prepend(:awesome_framework).remove('some_stylesheet', :media => :print) %>
+	
+This will add all stylesheets from the `:base` expansion, make those from `:awesome_framework` load first, then get rid of `some_stylesheet.css` from the print stylesheets, which won't be needed anymore. In one line. Read on to find out more.
+
 Install
 =======
 
