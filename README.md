@@ -72,19 +72,15 @@ Examples
 These can be written either in your views inside `<% %>` tags, or directly in your controller actions or filters. Every method accepts a `:media => :type` argument to specify what stylesheet stack should be manipulated. When omitted, the default media stack is used.
 
 *		`css 'list_view', 'foo_details'`
-	
 		Adds `list_view.css` and `foo_details.css` to the stack.
 	
 *		`css.remove('grid').prepend('grid_iphone').append('mobile')` 	
-
 		Removes `grid.css`, prepends `grid_iphone.css` to the front of the stack and then appends `mobile.css` to the end.
 		
 *		`css '-grid', 'grid_iphone+', 'mobile'`
-
 		The short, ninja version of the above example.
 		
 * 	`css :print, :media => :print`
-
 		Adds the stylesheets, registered in the `:print` stylesheet expansion group, to the print media stack.
 
 Working with Less/Sass
