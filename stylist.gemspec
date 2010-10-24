@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tisho Georgiev"]
-  s.date = %q{2010-03-30}
+  s.date = %q{2010-10-24}
   s.description = %q{Stylist provides powerful stylesheet management for your Rails app. You can organize your CSS files by media, add, remove or prepend stylesheets in the stylesheets stack from your controllers and views, and process them using Less or Sass. And as if that wasn't awesome enough, you can even minify them using YUI Compressor and bundle them into completely incomprehensible, but bandwidth-friendly mega-stylesheets.}
   s.email = %q{tihomir.georgiev@gmail.com}
   s.extra_rdoc_files = [
@@ -53,7 +53,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/tisho/stylist}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = %q{1.3.7}
   s.summary = %q{Powerful stylesheet management for your Rails app.}
   s.test_files = [
     "spec/configuration_spec.rb",
@@ -70,7 +70,7 @@ Gem::Specification.new do |s|
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<rspec>, [">= 1.2.9"])
       s.add_development_dependency(%q<rails>, [">= 2.3"])
     else
