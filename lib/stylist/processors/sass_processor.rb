@@ -12,7 +12,7 @@ module Stylist
             source_path = source_path_for(stylesheet)
             if source_path && source_path.exist?
               puts "Processing #{source_path}..."
-              engine = File.open(source_path) {|f| ::Sass::Engine.new(f.read) }
+              engine = File.open(source_path) {|f| ::Sass::Engine.new(f.read, :syntax => syntax_from_source_path(source_path)) }
               css = engine.to_css
               css.delete!("\n") if configuration.sass.compress
               File.open(stylesheet, "w") { |f| f.puts css }
@@ -21,7 +21,11 @@ module Stylist
         end
         
         def source_path_for(file)
-          Pathname.glob(File.join(configuration.sass.source_path, File.basename(file, '.css')+'.sass'))[0]
+          Pathname.glob(File.join(configuration.sass.source_path, File.basename(file, '.css')+'.s[ac]ss'))[0]
+        end
+        
+        def syntax_from_source_path(path)
+          path.to_s.ends_with?('.scss') ? :scss : :sass
         end
 
         def stylesheets_to_process(collection)
