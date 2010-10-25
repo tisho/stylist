@@ -44,6 +44,9 @@ module Stylist
         if processor.is_a? Class
           processor_class = processor
         else
+          possible_processor_path = File.join(File.dirname(__FILE__), "processors/#{processor}_processor.rb")
+          require possible_processor_path if File.exists?(possible_processor_path)
+          
           class_name = processor.to_s.strip.camelize.sub(/(Processor)?$/, 'Processor')
           processor_class = class_name.constantize rescue "::Stylist::Processors::#{class_name}".constantize
         end

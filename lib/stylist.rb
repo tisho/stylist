@@ -9,9 +9,12 @@ require 'stylist/railtie' if defined?(::Rails) && ::Rails::VERSION::MAJOR >= 3
 module Stylist
   class << self
     attr_accessor :stylesheets
+    
+    def setup!
+      self.configuration = Configuration.new
+      self.stylesheets = StylesheetCollection.new
+    end
   end
-  self.configuration = Configuration.new
-  self.stylesheets = StylesheetCollection.new
 end
 
 
@@ -21,6 +24,8 @@ if defined? ::ActionController && defined? ::ActionView
 end
 
 if defined?(::Rails) && ::Rails::VERSION::MAJOR == 2
+  ::Stylist.setup!
+  
   if defined? ::Haml
     require 'stylist/processors/sass_processor'
     ::Stylist.configure { |config| config.process_with :sass }

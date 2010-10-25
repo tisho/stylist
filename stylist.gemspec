@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{stylist}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tisho Georgiev"]
-  s.date = %q{2010-10-24}
+  s.date = %q{2010-10-25}
   s.description = %q{Stylist provides powerful stylesheet management for your Rails app. You can organize your CSS files by media, add, remove or prepend stylesheets in the stylesheets stack from your controllers and views, and process them using Less or Sass. And as if that wasn't awesome enough, you can even minify them using YUI Compressor and bundle them into completely incomprehensible, but bandwidth-friendly mega-stylesheets.}
   s.email = %q{tihomir.georgiev@gmail.com}
   s.extra_rdoc_files = [
